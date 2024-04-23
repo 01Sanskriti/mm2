@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up </title>
+  <style>
+    /* form {
+      width: 300px;
+      margin: 0 auto;
+    }
+    label, input {
+      display: block;
+      margin-bottom: 10px;
+    }
+    button{
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    h1{
+        text-align: center;
+        margin-top: 50px;
+    }
+    div{
+        margin-top: 75px;
+      align-content: center;
+      margin-left: 100px;
+    } */
+   
+        span{
+            color: red;
+        }
+    form {
+      width: 300px;
+      margin: 0 auto;
+    }
+    input{
+        padding-bottom: 5px;
+        padding-top: 5px;
+        font-size: 14px;
+    }
+    label, input {
+      display: block;
+      margin-bottom: 4px;
+    }
+    label{
+        font-size: 18px;
+    }
+    button{
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 20px;
+      font-size: 16px;
+      text-decoration: none;
+
+    }
+    #btn:hover{
+        background-color: #1a6e1b;
+        text-decoration: underline;
+        box-shadow: 2px 2px 0px 1px rgb(130, 183, 155);
+    }
+    #btn:visited{
+        color: white;
+    }
+    h1{
+      text-align: center;
+      margin-top: 50px;
+    }
+    div{
+      margin-top: 40px;
+      align-content: center;
+      margin-left: 100px;
+    }
+   
+  </style>
+</head>
+<body>
+  <!-- <h1>Sign Up</h1>
+  <div>
+  <form action="signup.php" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button id="btn" value="signup" ><a href="index.html">Sign Up</a></button>
+  </form> -->
+  <h1>Sign Up</h1>
+  <div>
+  <form action="#" autocomplete="off" onsubmit="return svalidation()" >
+      <table cellspacing="15">
+          <tr><td>
+              <label for="user">Username:</label>
+              <input type="text" id="user" placeholder="User">
+              <span id="userr"></span>
+              </td></tr>
+          <tr><td>
+            <label for="pass">Password:</label>
+                <input type="text" id="pass" placeholder="Password">
+                <span id="passs"></span>
+                </td></tr>
+            <tr><td>
+              <tr><td>
+                <!-- <a href="personalinfo.html"><input type="submit" id="btn" value="Register"></a> -->
+               <button id="btn" value="signup" ><a href="index.html">Sign Up</a></button>
+               </td></tr>
+   </form>
+</div>
+<script type="text/javascript">
+  function svalidation()
+  {
+      var user = document.getElementById('user').value;
+      var pass = document.getElementById('pass').value;
+     
+  if(user == "")
+      {
+      document.getElementById('userr').innerHTML="Please enter username in the box !!";
+      return false;
+      }
+      if(user.length<2){
+      document.getElementById('userr').innerHTML="Please enter more than one character !!";  
+      return false;
+  }
+  if(!isNaN(user)){
+      document.getElementById('userr').innerHTML="Please enter alphabets only !!";  
+      return false;
+  }
+  else{
+      document.getElementById('userr').innerHTML="";    
+  }
+  if(pass == "")
+            {
+            document.getElementById('passs').innerHTML="Please enter password in the box !!";
+            return false;
+        }
+        if(pass.length<8)
+            {
+            document.getElementById('passs').innerHTML="Please enter atleast 8 characters";
+            return false;
+        }
+        if(pass.search(/[0-9]/)==-1)
+            {
+            document.getElementById('passs').innerHTML="Password must contain atleast one numeric character";
+            return false;
+        }
+        if(pass.search(/[a-z]/)==-1)
+            {
+            document.getElementById('passs').innerHTML="Password must contain atleast one lower case character";
+            return false;
+        }
+        if(pass.search(/[A-Z]/)==-1)
+            {
+            document.getElementById('passs').innerHTML="Password must contain atleast one upper case character";
+            return false;
+        }
+        if(pass.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\=\<\>\,\?]/)==-1)
+            {
+            document.getElementById('passs').innerHTML="Password must contain atleast one special character";
+            return false;
+        }
+        else{
+            document.getElementById('passs').innerHTML="";    
+        }
+}
+</script>
+</body>
+</html>

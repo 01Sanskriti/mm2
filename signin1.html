@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+        }
+    form {
+      width: 300px;
+      margin: 0 auto;
+    }
+    input{
+        padding-bottom: 5px;
+        padding-top: 5px;
+        font-size: 14px;
+    }
+    label, input {
+      display: block;
+      margin-bottom: 4px;
+    }
+    label{
+        font-size: 18px;
+    }
+    button{
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 20px;
+      font-size: 16px;
+      text-decoration: none;
+
+    }
+    #btn:hover{
+        background-color: #1a6e1b;
+        text-decoration: underline;
+        box-shadow: 2px 2px 0px 1px rgb(130, 183, 155);
+    }
+    #btn:visited{
+        color: white;
+    }
+    h1{
+      text-align: center;
+      margin-top: 50px;
+    }
+    div{
+      margin-top: 40px;
+      align-content: center;
+      margin-left: 100px;
+    }
+    </style>
+     <link rel="html" href="personalinfo.html">
+</head>
+<body>
+    <h1>Sign In</h1>
+    <div>
+    <form action="#" autocomplete="off" onsubmit="return validation()" >
+        <table cellspacing="15">
+            <tr><td>
+                <label for="user">Username:</label>
+                <input type="text" id="user" placeholder="User">
+                <span id="userr"></span>
+                </td></tr>
+            <tr><td>
+                <label for="pass">Password:</label>
+                <input type="text" id="pass" placeholder="Password">
+                <span id="passs"></span>
+                </td></tr>
+            <tr><td>
+                <label for="conpass">Confirm password:</label>
+                <input type="text" id="conpass" placeholder="Confirm Password">
+                <span id="conpasss"></span>
+                </td></tr>
+            <tr><td>
+                <label for="email">E-mail</label>
+                <input type="text" id="email" placeholder="E-mail">
+                <span id="emaill"></span>
+                </td></tr>
+            <tr><td>
+                <label for="mobile">Mobile:</label>
+                <input type="text" id="mobile" placeholder="Mobile">
+                <span id="mobilee"></span>
+                </td></tr>
+            <tr><td>
+                 <!-- <a href="personalinfo.html"><input type="submit" id="btn" value="Register"></a> -->
+                <button id="btn" value="Register" ><a href="personalinfo.html">Register</a></button>
+                </td></tr>
+    </form>
+</div>
+    <script type="text/javascript">
+        function validation()
+        {
+            var user = document.getElementById('user').value;
+            var pass = document.getElementById('pass').value;
+            var conpass = document.getElementById('conpass').value;
+            var email = document.getElementById('email').value;
+            var mobile = document.getElementById('mobile').value;
+        if(user == "")
+            {
+            document.getElementById('userr').innerHTML="Please enter username in the box !!";
+            return false;
+            }
+            if(user.length<2){
+            document.getElementById('userr').innerHTML="Please enter more than one character !!";  
+            return false;
+        }
+        if(!isNaN(user)){
+            document.getElementById('userr').innerHTML="Please enter alphabets only !!";  
+            return false;
+        }
+        else{
+            document.getElementById('userr').innerHTML="";    
+        }
+        
+        if(pass == "")
+            {
+            document.getElementById('passs').innerHTML="Please enter password in the box !!";
+            return false;
+        }
+        if(pass.length<8)
+            {
+            document.getElementById('passs').innerHTML="Please enter atleast 8 characters";
+            return false;
+        }
+        if(pass.search(/[0-9]/)==-1)
+            {
+            document.getElementById('passs').innerHTML="Password must contain atleast one numeric character";
+            return false;
+        }
+        if(pass.search(/[a-z]/)==-1)
+            {
+            document.getElementById('passs').innerHTML="Password must contain atleast one lower case character";
+            return false;
+        }
+        if(pass.search(/[A-Z]/)==-1)
+            {
+            document.getElementById('passs').innerHTML="Password must contain atleast one upper case character";
+            return false;
+        }
+        if(pass.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\=\<\>\,\?]/)==-1)
+            {
+            document.getElementById('passs').innerHTML="Password must contain atleast one special character";
+            return false;
+        }
+        else{
+            document.getElementById('passs').innerHTML="";    
+        }
+        if(conpass == "")
+            {
+            document.getElementById('conpasss').innerHTML="Please confirm your password in the box !!";
+            return false;
+        }
+        if(conpass != pass)
+            {
+            document.getElementById('conpasss').innerHTML="Password does not match";
+            return false;
+        }
+        else{
+            document.getElementById('passs').innerHTML="";    
+        }
+        if(email == "")
+            {
+            document.getElementById('emaill').innerHTML="Please enter email in the box !!";
+            return false;
+        }
+        if(email.indexOf('@')<=0)
+            {
+            document.getElementById('emaill').innerHTML="Invalid position of @";
+            return false;
+        }
+        if(email.charAt(email.length-4)!='.' && email.charAt(email.length-3)!='.')
+            {
+            document.getElementById('emaill').innerHTML="Invalid Email Address";
+            return false;
+        }
+        else{
+            document.getElementById('emaill').innerHTML="";    
+        }
+
+        if(mobile == "")
+            {
+            document.getElementById('mobilee').innerHTML="Please enter mobile number in the box !!";
+        }
+        if(isNaN(mobile)){
+            document.getElementById('mobilee').innerHTML="Please enter digits only !!";  
+            return false;
+        }
+        if(mobile.length<10 )
+        {
+            document.getElementById('mobilee').innerHTML="Please enter valid mobile number !!";  
+            return false;
+        }
+        if(mobile.length>10 )
+        {
+            document.getElementById('mobilee').innerHTML="Please enter valid mobile number !!";  
+            return false;
+        }
+        else
+        {
+            document.getElementById('mobilee').innerHTML="";    
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Info</title>
+    <style>
+        span{
+            color: red;
+        }
+    form {
+      width: 300px;
+      margin: 0 auto;
+    }
+    input{
+        padding-bottom: 5px;
+        padding-top: 5px;
+        font-size: 14px;
+    }
+    label, input {
+      display: block;
+      margin-bottom: 4px;
+    }
+    label{
+        font-size: 18px;
+    }
+    button{
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 20px;
+      font-size: 16px;
+      text-decoration: none;
+
+    }
+    #btn:hover{
+        background-color: #1a6e1b;
+        text-decoration: underline;
+        box-shadow: 2px 2px 0px 1px rgb(130, 183, 155);
+    }
+    #btn:visited{
+        color: white;
+    }
+    h1{
+      text-align: center;
+      margin-top: 50px;
+    }
+    div{
+      margin-top: 40px;
+      align-content: center;
+      margin-left: 100px;
+    }
+    </style>
+</head>
+<body>
+    <form autocomplete="off" onsubmit="return validation()">
+        <table cellspacing="15">
+                <h1>Personal Information</h1>
+                <h3>Full Name</h3>
+                    <tr><td>
+                    <label for="fname">First Name *</label>
+                    <input type="text" placeholder="Enter your First Name" id="fname" ><br>
+                    <span id="fnamee"></span>
+                </td></tr>
+                    <tr><td>
+                    <label for="Mname">Middle Name </label>
+                    <input type="text" placeholder="Enter your Middle Name" id="Mname"><br>
+                    <span id="Mnamee"></span>
+                </td></tr>
+                    <tr><td>
+                    <label for="Lname">Last Name</label>
+                    <input type="text" placeholder="Enter your Last Name" id="Lname"><br>
+                    <span id="Lnamee"></span>
+            </td></tr>
+        </table>
+        <h3>Pronouns</h3>
+            <label for="pronoun">Select your Pronoun:</label>
+            <select id="pronoun" name="pronoun">
+            <option value="his">His</option>
+            <option value="her">Her</option>
+            <option value="Ns">Rather not Say</option>
+        </select>
+        <h3>Date Of Birth</h3>
+<label for="dob">Date Of Birth *</label>
+<input type="date" id="dob" placeholder="Enter Your Date Of Birth" >
+        <table>
+            <tr><td>
+                <label for="add">Address </label><br>
+                <input type="text" placeholder="Enter Your Address" id="add" >
+                <span id="addd"></span>
+            </td></tr>       
+        </table>
+        <input type="submit" name="next" value="next" id="next">
+        <!-- <button id="btn" value="next" ><a href="">Next</a></button>
+                </td></tr> -->
+    </form>
+    <script>
+       function validation()
+        {
+            var fname = document.getElementById('fname').value;
+            var Mname = document.getElementById('Mname').value;
+            var Lname = document.getElementById('Lname').value;
+            var add = document.getElementById('addd').value;
+           
+        if( fname == "")
+            {
+            document.getElementById('fnamee').innerHTML="Please enter First name in the box !!";
+            return false;
+            }
+            if(fname.length<2){
+            document.getElementById('fnamee').innerHTML="Please enter more than one character !!";  
+            return false;
+        }
+        if(!isNaN(fname)){
+            document.getElementById('fnamee').innerHTML="Please enter alphabets only !!";  
+            return false;
+        }
+        else{
+            document.getElementById('fnamee').innerHTML="";    
+        } 
+
+
+
+        if( Mname == "")
+            {
+            document.getElementById('Mnamee').innerHTML="Please enter Middle name in the box !!";
+            return false;
+            }
+            if(Mname.length<2){
+            document.getElementById('Mnamee').innerHTML="Please enter more than one character !!";  
+            return false;
+        }
+        if(!isNaN(Mname)){
+            document.getElementById('Mnamee').innerHTML="Please enter alphabets only !!";  
+            return false;
+        }
+        else{
+            document.getElementById('Mnamee').innerHTML="";    
+        } 
+
+
+        if( Lname == "")
+            {
+            document.getElementById('Lnamee').innerHTML="Please enter Last name in the box !!";
+            return false;
+            }
+            if(Lname.length<2){
+            document.getElementById('Lnamee').innerHTML="Please enter more than one character !!";  
+            return false;
+        }
+        if(!isNaN(Lname)){
+            document.getElementById('Lnamee').innerHTML="Please enter alphabets only !!";  
+            return false;
+        }
+        else{
+            document.getElementById('Lnamee').innerHTML="";    
+        } 
+
+
+        if( add == "")
+            {
+            document.getElementById('addd').innerHTML="Please enter valid address in the box !!";
+            return false;
+            }
+            if(add.length<2){
+            document.getElementById('addd').innerHTML="Please enter more than one character !!";  
+            return false;
+        }
+       
+        else{
+            document.getElementById('addd').innerHTML="";    
+        } 
+
+    }
+    </script>
+    <% 
+    out.println("hello");
+    %>
+</body>
+</html>
